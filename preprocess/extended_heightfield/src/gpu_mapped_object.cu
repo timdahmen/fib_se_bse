@@ -25,7 +25,7 @@ __global__ void mem_set_kernel(DTYPE* buffer, int3 buffer_size, DTYPE init_value
 }
 
 template<typename DTYPE>
-GPUMappedObject<DTYPE>::GPUMappedObject<DTYPE>(int3 dimensions)
+GPUMappedObject<DTYPE>::GPUMappedObject(int3 dimensions)
 	: ownsCPUBuffer(true)
 	, ownsGPUBuffer(true)
 	, dimensions(dimensions)
@@ -35,7 +35,7 @@ GPUMappedObject<DTYPE>::GPUMappedObject<DTYPE>(int3 dimensions)
 }
 
 template<typename DTYPE>
-GPUMappedObject<DTYPE>::GPUMappedObject<DTYPE>(int3 dimensions, DTYPE init_value)
+GPUMappedObject<DTYPE>::GPUMappedObject(int3 dimensions, DTYPE init_value)
 	: ownsCPUBuffer(true)
 	, ownsGPUBuffer(true)
 	, dimensions(dimensions)
@@ -48,7 +48,7 @@ GPUMappedObject<DTYPE>::GPUMappedObject<DTYPE>(int3 dimensions, DTYPE init_value
 }
 
 template<typename DTYPE>
-GPUMappedObject<DTYPE>::GPUMappedObject<DTYPE>(int3 dimensions, DTYPE* gpu_ptr)
+GPUMappedObject<DTYPE>::GPUMappedObject(int3 dimensions, DTYPE* gpu_ptr)
 	: ownsCPUBuffer(true)
 	, ownsGPUBuffer(false)
 	, dimensions(dimensions)
@@ -58,7 +58,7 @@ GPUMappedObject<DTYPE>::GPUMappedObject<DTYPE>(int3 dimensions, DTYPE* gpu_ptr)
 }
 
 template<typename DTYPE>
-GPUMappedObject<DTYPE>::GPUMappedObject<DTYPE>(int3 dimensions, DTYPE* cpu_ptr, DTYPE* gpu_ptr )
+GPUMappedObject<DTYPE>::GPUMappedObject(int3 dimensions, DTYPE* cpu_ptr, DTYPE* gpu_ptr )
 	: _cpu_ptr(cpu_ptr)
 	, _gpu_ptr(gpu_ptr)
 	, dimensions(dimensions)
@@ -68,7 +68,7 @@ GPUMappedObject<DTYPE>::GPUMappedObject<DTYPE>(int3 dimensions, DTYPE* cpu_ptr, 
 }
 
 template<typename DTYPE>
-GPUMappedObject<DTYPE>::~GPUMappedObject<DTYPE>()
+GPUMappedObject<DTYPE>::~GPUMappedObject()
 {
 	if (ownsCPUBuffer)
 		cudaFreeHost(_cpu_ptr);

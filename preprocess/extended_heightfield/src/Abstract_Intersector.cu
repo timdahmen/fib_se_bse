@@ -10,7 +10,7 @@
 #include <string>
 
 template<class Primitive>
-Abstract_Intersector<Primitive>::Abstract_Intersector<Primitive>( std::tuple<int, int> output_resolution, int n_hf_entries, int buffer_length )
+Abstract_Intersector<Primitive>::Abstract_Intersector( std::tuple<int, int> output_resolution, int n_hf_entries, int buffer_length )
 	: output_resolution( as_int2(output_resolution) )
 	, n_hf_entries(n_hf_entries)
 	, buffer_length(buffer_length)
@@ -21,7 +21,7 @@ Abstract_Intersector<Primitive>::Abstract_Intersector<Primitive>( std::tuple<int
 }
 
 template<class Primitive>
-Abstract_Intersector<Primitive>::Abstract_Intersector<Primitive>(float2* extended_heightfield_gpu, float* z_buffer_gpu, float3* normal_map_gpu, std::tuple<int, int> output_resolution, int n_hf_entries, int buffer_length)
+Abstract_Intersector<Primitive>::Abstract_Intersector(float2* extended_heightfield_gpu, float* z_buffer_gpu, float3* normal_map_gpu, std::tuple<int, int> output_resolution, int n_hf_entries, int buffer_length)
 	: output_resolution( as_int2(output_resolution ) )
 	, n_hf_entries(n_hf_entries)
 	, buffer_length(buffer_length)
